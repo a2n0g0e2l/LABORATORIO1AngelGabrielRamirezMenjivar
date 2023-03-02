@@ -7,54 +7,30 @@ using Laboratorio01.Entidades;
 namespace Laboratorio01.Negocio
 {
     public class ClsPersona
-    {
-      
     
-        // Atributos
-        private string nombre;
-        private int edad;
-        private char sexo;
-        private double peso;
-        private double altura;
-
-        // Constructor
-        public ClsPersona(string nombre, int edad, char sexo, double peso, double altura)
+    {
+        public string CalcularIMC(Persona per)
         {
-            this.nombre = nombre;
-            this.edad = edad;
-            this.sexo = sexo;
-            this.peso = peso;
-            this.altura = altura;
-        }
+            double Promedio = per.Peso / Math.Pow(per.Altura, 2);
 
-        // Métodos
-        public double CalcularIMC()
-        {
-            double imc = peso / Math.Pow(altura, 2);
-
-            if (imc < 24)
+            if(Promedio > 25)
             {
-                Console.WriteLine("Peso ideal");
-            }
-            else if (imc > 25)
-            {
-                Console.WriteLine("Tiene sobrepeso");
-            }
-
-            return imc;
-        }
-
-        public bool EsMayorDeEdad()
-        {
-            if (edad >= 18)
-            {
-                Console.WriteLine("Es mayor de edad");
-                return true;
+                return $"Tiene sobre peso";
             }
             else
             {
-                Console.WriteLine("Es menor de edad");
-                return false;
+                return $"Tiene un peso ideal";
+            }
+        }
+        public String MayorDeEdad(Persona per)
+        {       
+            if(per.Edad >= 18)
+            {    
+                return $"Es mayor de edad";
+            }
+            else
+            {       
+                return $"Es mayor de edad";
             }
         }
     }

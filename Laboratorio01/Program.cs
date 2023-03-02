@@ -4,33 +4,39 @@
 using Laboratorio01.Entidades;
 using Laboratorio01.Negocio;
 
-Persona persona = new Persona();
-ClsPersona clsPersona = new ClsPersona("Angel", 30, 'H', 70.5, 1.70);
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Ingrese el nombre:");
-            string nombre = Console.ReadLine();
+Persona per = new Persona();
+ClsPersona clsPersona = new ClsPersona();
 
-            Console.WriteLine("Ingrese la edad:");
-            int edad = int.Parse(Console.ReadLine());
+Console.Write(@"Bienvenido a su calculador de IMC
 
-            Console.WriteLine("Ingrese el sexo (H o M):");
-            char sexo = char.Parse(Console.ReadLine());
+ingrese los siguientes datos para continuar
 
-            Console.WriteLine("Ingrese el peso en kg:");
-            double peso = double.Parse(Console.ReadLine());
+ingrese su nombre -> ");
+per.Nombre = Console.ReadLine();
 
-            Console.WriteLine("Ingrese la altura en m:");
-            double altura = double.Parse(Console.ReadLine());
+Console.Write("\nIngrese su edad -> ");
+per.Edad = Convert.ToInt32(Console.ReadLine());
 
-            ClsPersona persona = new ClsPersona(nombre, edad, sexo, peso, altura);
+Console.Write("\nIngrese su Sexo -> ");
+per.Sexo = Console.ReadLine();
 
-            persona.CalcularIMC();
-            persona.EsMayorDeEdad();
+Console.Write("\nIngrese su peso en KG -> ");
+per.Peso = Convert.ToDouble(Console.ReadLine());
 
-            Console.ReadKey();
-        }
-    }
+Console.Write("\nIngrese su altura en metros -> ");
+per.Altura = Convert.ToDouble(Console.ReadLine());
 
+Console.Write($@"
+Nombre: {per.Nombre} edad: {per.Edad} sexo: {per.Sexo}
+
+Peso: {per.Sexo}
+
+Altura: {per.Altura}
+
+Usted {clsPersona.CalcularIMC(per)}
+
+Usted {clsPersona.MayorDeEdad(per)}");
+
+    
+     
 

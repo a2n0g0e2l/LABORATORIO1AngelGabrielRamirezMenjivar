@@ -7,10 +7,10 @@ namespace Laboratorio01.Entidades
 {
     public class Persona
     {
-       public string? Nombre {get;set;}
-       public string? Edad {get;set;}
-       public string? Sexo {get;set;}
-       public string? Peso {get;set;}
-       public string? Altura {get;set;} 
+       public string? Nombre {get; set; }
+       public int Edad {get; set; }
+       public string? Sexo {get; set; }
+       public double Peso {get; set; }
+       public double Altura {get; set; } 
     }
 }
